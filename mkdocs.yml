@@ -1,0 +1,79 @@
+site_name: Documentation - Blok 4 (SE)
+site_description: Documentation - Blok 4 (SE)
+site_author: HvA HBO-ICT
+copyright: Copyright 2024 Hogeschool van Amsterdam
+
+theme:
+    name: material
+
+    custom_dir: mdocotion/
+    hide_site_name: true
+    content_margin_top: 0px
+    header_color: "rgb(255, 255, 255, 0.2)"
+    logo: assets/logo.png
+    favicon: assets/logo.png
+    language: nl
+
+    features:
+        - search.share
+        - content.code.annotate
+        - navigation.sections
+        - content.tabs.link
+        - content.code.copy
+
+extra_css:
+    - css/default.css
+
+plugins:
+    - search
+    - awesome-pages
+    - mkdocs-video:
+          css_style:
+              aspect-ratio: 16 / 9;
+              width: 100%;
+    - section-index
+    - autolinks
+    - macros:
+          modules: [mkdocs_macros_mdocotion]
+    - git-revision-date-localized:
+          enabled: true
+          fallback_to_build_date: true
+          timezone: Europe/Amsterdam
+          locale: nl
+    - open-in-new-tab
+
+markdown_extensions:
+    - extra
+    - abbr
+    - smarty
+    - admonition
+    - footnotes
+    - attr_list
+    - md_in_html
+    - pymdownx.keys
+    - pymdownx.tabbed:
+          alternate_style: true
+    - codehilite:
+          guess_lang: true
+    - toc:
+          permalink: true
+    - pymdownx.tasklist:
+          custom_checkbox: true
+          clickable_checkbox: true
+    - pymdownx.highlight:
+          anchor_linenums: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets:
+          auto_append:
+              - includes/abbreviations.md
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
+    - pymdownx.details
+    - pymdownx.emoji:
+          emoji_index: !!python/name:material.extensions.emoji.twemoji
+          emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    - pymdownx.arithmatex:
+          generic: true

@@ -1,0 +1,38 @@
+hic:
+    image: node:18.16.0
+    before_script:
+        - apt-get update
+        - apt-get install -y lftp
+        - apt-get install -y wget
+    stage: deploy
+    when: always
+    tags:
+        - hva
+    cache:
+        key:
+            files:
+                - package-lock.json
+            prefix: npm
+        paths:
+            - node_modules/
+    script:
+        - npm install
+        - npm run test
+        - npm run build
+        - lftp -e "
+            TODO"
+        - 'wget --header="Authorization: $HIC_API_KEY" $HIC_API_URL/$HIC_ENVIRONMENT/Restart'
+    artifacts:
+        paths:
+            - dist
+    rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $DEPLOY_HIC == "true"
+          variables:
+              HIC_ENVIRONMENT: "live"
+        - if: $CI_COMMIT_BRANCH == "dev" && $DEPLOY_HIC == "true"
+          variables:
+              HIC_ENVIRONMENT: "dev"
+        - if: $CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_COMMIT_BRANCH != "dev" && $DEPLOY_HIC == "true"
+          when: manual
+          variables:
+              HIC_ENVIRONMENT: "dev"

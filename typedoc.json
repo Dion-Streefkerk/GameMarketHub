@@ -1,0 +1,13 @@
+{
+    "$schema": "https://typedoc.org/schema.json",
+    "entryPoints": [
+        "./src/api/**/*.ts",
+        "./src/shared/**/*.ts",
+        "./src/web/**/*.ts",
+    ],
+    "out": "./docs/tsdoc",
+    "sort": ["alphabetical"],
+    "excludeReferences": true,
+    "searchInComments": true,
+    "validation": true
+}

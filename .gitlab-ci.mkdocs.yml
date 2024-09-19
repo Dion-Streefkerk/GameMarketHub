@@ -1,0 +1,19 @@
+# NOTE: This job has to be called "pages" to be able to deploy to Gitlab Pages!
+pages:
+    image: python:3.9-slim
+    before_script:
+        - time apt update && apt-get install -y git
+        - time pip install -r requirements.txt
+        - time git clone https://uva-hva.gitlab.host/hbo-ict/mdocotion.git mdocotion
+        - time cd mdocotion && python setup.py install && cd ..
+    stage: deploy
+    when: always
+    tags:
+        - hva
+    script:
+        - time mkdocs build --site-dir public
+    artifacts:
+        paths:
+            - public
+    rules:
+        - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $DEPLOY_MKDOCS == "true"

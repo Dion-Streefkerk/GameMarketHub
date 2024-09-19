@@ -1,0 +1,36 @@
+/* TWEAK: Accent-color */
+:root {
+    --md-accent-fg-color: #373e98;
+}
+
+/* TWEAK: Give the logo a decent size */
+.mdocotion-nav-logo img {
+    height: 100px;
+}
+
+/* TWEAK: Pointer for tasklist */
+.task-list-indicator {
+    cursor: pointer;
+}
+
+/* BUGFIX: Prevent navigation items from right-aligning in some situations */
+[dir="ltr"] .md-nav__link .md-icon:last-child {
+    margin-left: inherit;
+}
+
+/* BUGFIX: Make navigation items clickable everywhere */
+.md-nav__link a {
+    width: 100%;
+}
+
+/* BUGFIX: Make sure the content uses all the available space */
+.mdocotion-content-block-inner > div {
+    width: 100%;
+}
+
+/* BUGFIX: Just make sure labels are always clickable */
+@media screen and (min-width: 76.25em) {
+    .md-nav__item--section > .md-nav__link {
+        pointer-events: all !important;
+    }
+}

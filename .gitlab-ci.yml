@@ -1,0 +1,7 @@
+variables:
+    DEPLOY_MKDOCS: "true"
+    DEPLOY_HIC: "false"
+
+include:
+    - ".gitlab-ci.mkdocs.yml"
+    - ".gitlab-ci.hic.yml"
