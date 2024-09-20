@@ -15,9 +15,9 @@ A responsive and open-source webshop for text-based adventure games.
 
 ## Introduction
 
-LucaStars is thrilled with the games delivered in the previous block. Together with CEO Bert Rongil, the marketing department has decided to offer these games for sale in a specially built webshop. Now, everyone who enjoys text-based adventures will have a fantastic selection to choose from!
+This project is a modern, responsive webshop built for selling text-based adventure games. It utilizes advanced web technologies, including TypeScript, Express.js for server-side endpoints, and Lit for web components, offering a streamlined user experience. The goal of the project is to create a seamless platform for users to explore and purchase games with features like detailed product pages, shopping carts, and checkout functionality.
 
-This project involves building a webshop for the games developed in Block 3. It utilizes modern web technologies, including TypeScript, Express.js for endpoints, and Lit for web components.
+The project showcases skills in full-stack development, with a focus on scalable, modular design and efficient handling of API routes.
 
 ## Screenshots
 
