@@ -1,6 +1,6 @@
 # LucaStars Webshop 💫
 
-A responsive and open-source webshop for text-based adventure games developed in Block 3 (2023-2024).
+A responsive and open-source webshop for text-based adventure games.
 
 ## Table of Contents
 
