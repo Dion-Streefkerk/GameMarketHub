@@ -61,25 +61,30 @@ page.png)
 First, clone the repository and install the necessary dependencies:
 
 ```bash
-git clone https://github.com/Dion-Streefkerk/lucastars-webshop.git
-cd lucastars-webshop
+git clone https://github.com/Dion-Streefkerk/GameMarketHub.git
+cd GameMarketHub
 npm install
 ```
 
+to open up the repo 
+
+```bash
+code .
+```
 ## Getting Started
 
 ### Running the Development API
 Start the development API server:
 
 ```bash
-npm run dev-api
+npm run dev:web
 ```
 ### Running the Development Web Server
 
 In another terminal, start the development web server:
 
 ```bash
-npm run dev-web
+npm run dev:api
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the webshop.
