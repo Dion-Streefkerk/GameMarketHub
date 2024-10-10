@@ -1,4 +1,4 @@
-# LucaStars Webshop 💫
+# Webshop 💫
 
 A responsive and open-source webshop for text-based adventure games.
 
